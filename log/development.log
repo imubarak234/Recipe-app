@@ -450,3 +450,32 @@ FOREIGN KEY ("food_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4817837574277861980)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-04-19 14:49:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant FoodsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-04-19 16:48:40 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 597.4ms | Allocations: 102059)
+  Rendered layout layouts/application.html.erb (Duration: 603.2ms | Allocations: 104012)
+Completed 200 OK in 648ms (Views: 615.6ms | Allocations: 106042)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-19 16:49:25 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 3045)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 4974)
+Completed 200 OK in 47ms (Views: 36.7ms | Allocations: 5804)
+
+
