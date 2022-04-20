@@ -9,9 +9,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    
-    <%= yield %>
-    <h1>Index</h1>
-  </body>
+  <body class = "container-fluid">
+    <div class = "d-flex justify-content-around">
+      <% @recipe.each do |recipe| %>
+      <div class = "d-flex flex-column">
+        <p> <%= recipe.name %></p>
+     <%= link_to "Destroy", recipe_path(@recipe), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>  
+
+                  </div>
+        <p> <%= recipe.description %></p>
+        <% end %>
+        </div>
+</body>
+
 </html>
